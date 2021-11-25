@@ -37,7 +37,7 @@
           if(request.getParameter("password").equals(results.getString(2))){
             exists = true; %>
               <form class="login-form" id="loginForm" method="post" action=<%if(results.getString(3).equalsIgnoreCase("Stock Manager")){
-              System.out.println("WORKING!!!");%>"holder.jsp">
+              System.out.println("WORKING!!!");%>"inventory.jsp">
               <%}else{%>//admin page><%}%>
                 <input type="hidden" id="currentUser" class="form-input" value= <%=results.getString(1)%>/>
                 <input type="hidden" id="currentUserTitle" class="form-input" value= <%=results.getString(3)%>/>
