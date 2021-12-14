@@ -82,9 +82,10 @@
     <div class="container"><a class="navbar-brand logo" href="#">ThreadsExpress</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ThreadsExpress_war_exploded/inventory.jsp">Inventory</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ThreadsExpress_war_exploded/login.jsp">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ThreadsExpress_war_exploded/adminInventory.jsp">Inventory</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
             </ul>
             <ul class="navbar-nav"></ul>
         </div>
@@ -99,10 +100,18 @@
                     inventoryResults.beforeFirst();
                 }if(invRows != 0) { %>
             <div class="block-heading">
-                <h2 class="text-info">Inventory</h2>
+                <h2 class="text-info">Admin Inventory</h2>
             </div>
-
-            <table id="inventoryTable" class="table table-striped table-bordered" style="width:100%">
+            <div class="dropdown mb-4">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Admin Controls
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/ThreadsExpress_war_exploded/employeeInventory.jsp">Add New Employee</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </div>
+            </div>
+            <table id="adminInventoryTable" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                 <tr><th>Barcode</th>
                     <th>Quantity</th>
@@ -150,7 +159,7 @@
                         <span aria-hidden="true">X</span>
                     </button>
                 </div>
-                <form class="needs-validation input-form" action="/ThreadsExpress_war_exploded/inventory.jsp" method="post" novalidate>
+                <form class="needs-validation input-form" action="/ThreadsExpress_war_exploded/adminInventory.jsp" method="post" novalidate>
                     <div class="modal-body">
                         <div class="container">
                             <div class="form-row">
@@ -213,6 +222,7 @@
                                     <label class="form-label" for="newArchiveValue"><b>Archive</b></label>
                                     <select class="form-control" id="newArchiveValue" name="newArchiveValue" data-width="100%">
                                         <option value="n" selected>No</option>
+                                        <option value="y" >Yes</option>
                                     </select>
                                 </div>
                             </div>
@@ -263,7 +273,7 @@
                         <span aria-hidden="true">X</span>
                     </button>
                 </div>
-                <form class="check-validation input-form" action="/ThreadsExpress_war_exploded/inventory.jsp" method="post" novalidate>
+                <form class="check-validation input-form" action="/ThreadsExpress_war_exploded/adminInventory.jsp" method="post" novalidate>
                     <div class="modal-body">
                         <div class="container">
                             <div class="form-row">
@@ -326,6 +336,7 @@
                                     <label class="form-label" for="archiveValue"><b>Archive</b></label>
                                     <select class="form-control" id="archiveValue" name="archiveValue" data-width="100%">
                                         <option value="n" selected>No</option>
+                                        <option value="y">Yes</option>
                                     </select>
                                 </div>
                             </div>
@@ -377,7 +388,7 @@
 <script src="vanilla-zoom.js"></script>
 <script src="theme.js"></script>
 <script>
-    $('#inventoryTable').DataTable();
+    $('#adminInventoryTable').DataTable();
 </script>
 </body>
 <%
