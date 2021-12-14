@@ -38,7 +38,7 @@
             exists = true; %>
               <form class="login-form" id="loginForm" method="post" action=<%if(results.getString(3).equalsIgnoreCase("Stock Manager")){
               System.out.println("WORKING!!!");%>"inventory.jsp">
-              <%}else{%>//admin page><%}%>
+              <%}else{%>"adminInventory.jsp"><%}%>
                 <input type="hidden" id="currentUser" class="form-input" value= <%=results.getString(1)%>/>
                 <input type="hidden" id="currentUserTitle" class="form-input" value= <%=results.getString(3)%>/>
               </form>
@@ -65,7 +65,6 @@
   <div class="container"><a class="navbar-brand logo" href="#">ThreadsExpress</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="contact-us.html">INVEntory</a></li>
         <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
